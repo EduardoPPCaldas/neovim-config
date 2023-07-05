@@ -4,6 +4,10 @@ return {
   lsp = {
     config = {
       omnisharp = {
+        OmniSharp_enable_import_completion = true,
+        OmniSharp_enable_editorconfig_support = false,
+        OmniSharp_organize_imports_on_format = true,
+        OmniSharp_enable_roslyn_analyzers = false,
         on_attach = function(client, bufnr)
           client.server_capabilities.semanticTokensProvider = {
             full = vim.empty_dict(),
@@ -80,7 +84,6 @@ return {
             range = true,
           }
         end,
-        enable_roslyn_analyzers = false
       },
     },
   },
